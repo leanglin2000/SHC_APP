@@ -13,10 +13,15 @@ use App\Http\Controllers\DemoController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-/*
+
 Route::get('/', function () {
-    return view('welcome');  
+    return view('index');  
 });
+
+Route::get('/article', function () {
+    return view('article');  
+});
+/*
 
 Route::get('/tag',function(){
     return 'this is tag page';
