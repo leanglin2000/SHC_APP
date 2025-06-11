@@ -19,25 +19,24 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
-                    $thumnails = ['database.png','node.png','php.png','programming.jpg','python.jpeg'];
-                    $categories = Category::pluck('id')->toArray();
+        $thumnails = ['database.png', 'node.png', 'php.png', 'programming.jpg', 'python.jpeg'];
+        $categories = Category::pluck('id')->toArray();
         return [
-                    'user_id' => 1,
-                    'title' => fake()->sentence(),
-                    'content' => fake()->text(),
-                    'thumnail' => 'upload/'. fake()->randomElement($thumnails),
-                    'category_id' => fake()->randomElement($categories),
+            'user_id' => 1,
+            'title' => fake()->sentence(),
+            'content' => fake()->text(),
+            'thumnail' => 'upload/' . fake()->randomElement($thumnails),
+            'category_id' => fake()->randomElement($categories),
 
         ];
     }
 
-    public function configure() 
+    public function configure()
     {
-            $tags = Tag::pluck('id')->toArray();
+        $tags = Tag::pluck('id')->toArray();
 
-        return $this->afterCreating(function (Post $post) use($tags){
-            $post->tags()->sync(fake()->randomElements( $tags,2));
+        return $this->afterCreating(function (Post $post) use ($tags) {
+            $post->tags()->sync(fake()->randomElements($tags, 2));
         });
     }
-} 
- 
+}

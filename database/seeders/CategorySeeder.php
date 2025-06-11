@@ -13,13 +13,13 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        $data =[
+        $data = [
             ['name' => 'frontend'],
-             ['name' => 'Backend'],
-              ['name' => 'Database']
+            ['name' => 'Backend'],
+            ['name' => 'Database']
         ];
 
-        foreach($data as $record){
+        foreach ($data as $record) {
             Category::create($record);
         };
     }

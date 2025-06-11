@@ -13,16 +13,16 @@ class TagSeeder extends Seeder
      */
     public function run(): void
     {
-        $data =[
+        $data = [
             ['name' => 'Web Design'],
-             ['name' => 'HTML'],
-              ['name' => 'CSS'],
-              ['name' => 'JS'],
-             ['name' => 'PHP'],
-              ['name' => 'My sql']
+            ['name' => 'HTML'],
+            ['name' => 'CSS'],
+            ['name' => 'JS'],
+            ['name' => 'PHP'],
+            ['name' => 'My sql']
         ];
 
-        foreach($data as $record){
+        foreach ($data as $record) {
             Tag::create($record);
         };
     }

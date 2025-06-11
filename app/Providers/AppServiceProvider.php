@@ -23,8 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-         Paginator::useBootstrapFive();
-         View::share('navbar_categories', Category::all());
-         View::share('sidebar_tags', Tag::all());
+        Paginator::useBootstrapFive();
+        View::share('navbar_categories', Category::all());
+        View::share('sidebar_tags', Tag::all());
     }
 }
