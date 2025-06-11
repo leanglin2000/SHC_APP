@@ -25,9 +25,10 @@
     <!-- Blog entries-->
     <div class="col-lg-8">
       <!-- Nested row for non-featured blog posts-->
-      <div class="row">
- 
-         @foreach ($posts as $post)
+      <div class="row"> 
+          @if ($posts->count())
+
+           @foreach ($posts as $post)
           <div class="col-lg-6">
           <!-- Blog post-->
           <div class="card mb-4">
@@ -48,7 +49,13 @@
           </div>
         </div>
 
-      @endforeach
+          @endforeach
+         
+          @else 
+            Not Post found...!
+          @endif
+
+        
 
       </div>
 

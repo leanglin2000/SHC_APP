@@ -2,20 +2,14 @@
     <div class="card-header">Tags</div>
     <div class="card-body">
       <div class="row">
-        <div class="col-sm-6">
+       @foreach ($sidebar_tags as $sidebar_tag)
+            <div class="col-sm-6">
           <ul class="list-unstyled mb-0">
-            <li><a href="#!">Web Design</a></li>
-            <li><a href="#!">HTML</a></li>
-            <li><a href="#!">Freebies</a></li>
+            <li><a href="{{ route('home',['tag_id' => $sidebar_tag->id]) }}">{{$sidebar_tag->name}}</a></li>
           </ul>
         </div>
-        <div class="col-sm-6">
-          <ul class="list-unstyled mb-0">
-            <li><a href="#!">JavaScript</a></li>
-            <li><a href="#!">CSS</a></li>
-            <li><a href="#!">Tutorials</a></li>
-          </ul>
-        </div>
+       @endforeach
+        
       </div>
     </div>
   </div> 

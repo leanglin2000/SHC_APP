@@ -4,6 +4,10 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\View;
+use App\Models\Category;
+use App\Models\Tag;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -20,5 +24,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
          Paginator::useBootstrapFive();
+         View::share('navbar_categories', Category::all());
+         View::share('sidebar_tags', Tag::all());
     }
 }
