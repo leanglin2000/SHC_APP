@@ -35,5 +35,8 @@ protected function image(): Attribute{
         get: fn($value)=> asset('storage/'.$this->thumnail),
     );
 }
-    
+   
+ public function displayDate(){
+        return $this->created_at->format('F d, Y');
+    }
 }
