@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('home') }}">Blog Name</a>
+        <a class="navbar-brand" href="{{ route('home') }}">STRONGHOLD CAMBODAI</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -29,12 +29,20 @@
                             <li>
                                 <a class="dropdown-item" href="{{ route('admin.tag.index') }}">Tag</a>
                             </li>
+                            
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
                             <li>
                                 <a class="dropdown-item" href="{{ route('admin.post.index') }}">Post</a>
                             </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ url('students') }}">Student</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ url('dashboard') }}">Dashboard</a>
+                            </li>
+                            
                         </ul>
                     </li>
                     <li class="nav-link active">

@@ -4,7 +4,7 @@
     <form method="get" action="{{route('home')}}">
 
       @foreach (collect(request()->Query())->only(['category_id', 'tag_id']) as $key => $value)
-      <input type="hidden " name="{{$key}}" value="{{$value}}">
+      <input type="hidden" name="{{$key}}" value="{{$value}}"/>
     @endforeach
       <div class="input-group">
         <input class="form-control" name="search" type="text" placeholder="Enter search term..."

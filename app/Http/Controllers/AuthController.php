@@ -23,13 +23,18 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+            //return redirect('admin/dashboard');
 
             return redirect()->intended(); //intended('dashboard');
+        } else
+        {
+            return redirect()->back()->with('error', 'Please enter currect email and password');
         }
 
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
+
+       // return back()->withErrors([
+       //     'email' => 'The provided credentials do not match our records.',
+       // ])->onlyInput('email');
     }
 
     public function logout(Request $request): RedirectResponse

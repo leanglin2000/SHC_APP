@@ -8,6 +8,7 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\HomeController;
+
 /*7
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +34,14 @@ Route::get('/tag',function(){
 });
 
 */
+
+
+
+
+//Route::resource('teachers', TeacherController::class);
+//Route::resource('parens', ParenController::class);
+
+
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -40,6 +49,11 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/tag', [DemoController::class, 'tag']);
 Route::get('/category', [DemoController::class, 'category']);
 Route::get('/blog', [DemoController::class, 'blog']);
+
+
+
+
+
 
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
 
@@ -63,4 +77,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/post/{id}', [postController::class, 'edit'])->name('post.edit');
     Route::put('/post/{id}', [postController::class, 'update'])->name('post.update');
     Route::delete('/post/{id}', [postController::class, 'destroy'])->name('post.destroy');
+
+       
+
 });
