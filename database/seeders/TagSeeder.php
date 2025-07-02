@@ -14,12 +14,14 @@ class TagSeeder extends Seeder
     public function run(): void
     {
         $data = [
-            ['name' => 'Web Design'],
-            ['name' => 'HTML'],
-            ['name' => 'CSS'],
-            ['name' => 'JS'],
-            ['name' => 'PHP'],
-            ['name' => 'My sql']
+            ['name' => 'Sunday schcool'],
+            ['name' => 'Bible study'],
+            ['name' => 'Devotion'],
+            ['name' => 'khmer classes'],
+            ['name' => 'English classess'],
+            ['name' => 'Program food'],
+            ['name' => 'Patnership'],
+            ['name' => 'Parenting']
         ];
 
         foreach ($data as $record) {

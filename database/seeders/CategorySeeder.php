@@ -14,9 +14,12 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $data = [
-            ['name' => 'frontend'],
-            ['name' => 'Backend'],
-            ['name' => 'Database']
+           
+            ['name' => 'KHMER'],
+            ['name' => 'ENGLISH'],
+             ['name' => 'COMPUTER'],
+             ['name' => 'WORSHIP'],
+             ['name' => 'SPORT'],
         ];
 
         foreach ($data as $record) {

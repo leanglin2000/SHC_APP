@@ -64,6 +64,8 @@
     @include('components.search-form')
     <!-- Tags widget-->
     @include('components.tag')
+    <!-- gallary widget-->
+    @include('components.donate')
     </div>
   </div>
 @endsection

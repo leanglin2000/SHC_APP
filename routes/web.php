@@ -9,22 +9,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\HomeController;
 
-/*7
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-//Route::get('/', function () {
-//   return view('index');  
-//})->name('home');
+
 
 Route::get('/article/{id}', [HomeController::class, 'article'])->name('article');
 /*
@@ -38,18 +26,17 @@ Route::get('/tag',function(){
 
 
 
-//Route::resource('teachers', TeacherController::class);
-//Route::resource('parens', ParenController::class);
+
 
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+
 Route::get('/tag', [DemoController::class, 'tag']);
 Route::get('/category', [DemoController::class, 'category']);
 Route::get('/blog', [DemoController::class, 'blog']);
-
 
 
 
@@ -78,6 +65,5 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::put('/post/{id}', [postController::class, 'update'])->name('post.update');
     Route::delete('/post/{id}', [postController::class, 'destroy'])->name('post.destroy');
 
-       
 
 });

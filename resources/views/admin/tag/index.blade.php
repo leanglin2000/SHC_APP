@@ -15,10 +15,11 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>tag</th>
-                                <th style="width: 100px">Action</th>
+                                <th>Tag</th>
+                                <th style="width: 25px">Edit</th>
+                                <th style="width: 25px">Delete</th>
                             </tr>
-                        </thead>
+                        </thead>    
                         <tbody>
                             @foreach ($tags as $tag)
                                 <tr>
@@ -26,8 +27,10 @@
                                     <td>{{ $tag->name }}</td>
                                     <td>
                                         <a class="btn btn-primary btn-sm"
-                                            href="{{ route('admin.tag.edit', ['id' => $tag->id]) }}" role="button">Edit</a>
+                                            href="{{ route('admin.tag.edit', ['id' => $tag->id]) }}" role="button">Edit </a>
 
+                                    </td>       
+                                    <td>       
                                         <form method="post" action="{{ route('admin.tag.destroy', ['id' => $tag->id]) }}">
                                             @method('DELETE')
                                             @csrf
@@ -44,7 +47,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Tag</th>
-                                <th>Action</th>
+                                <th></th>
                             </tr>
                         </tfoot>
                     </table>

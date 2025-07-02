@@ -15,6 +15,7 @@ class DemoController extends Controller
     {
         return view('category');
     }
+    
 
     public function blog()
     {
