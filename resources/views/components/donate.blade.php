@@ -5,7 +5,7 @@
     <div class="row">
       
 <div style="text-align:center">
-  <p>Scan on the QR for Donate  </p>
+  <p>  </p>
 </div>
 
 <!-- The four columns -->

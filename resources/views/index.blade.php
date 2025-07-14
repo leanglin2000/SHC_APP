@@ -17,6 +17,16 @@
     -webkit-box-orient: 2;
     -webkit-box-orient: vertical;
     }
+    .post-item-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: ;
+    -webkit-box-orient: vertical;
+    }
+   
   </style>
 @endpush
 
@@ -36,7 +46,9 @@
       src="{{ $post->image }}" alt="..." /></a>
       <div class="card-body">
       <div class="small text-muted">{{$post->displayDate()}}</div>
-      <h2 class="card-title h4">{{$post->title}}</h2>
+      <h2 class="card-title h4 post-item-title">
+      {{$post->title}}
+      </h2>
       <p class="card-text​​ post-item-content">
       {{$post->content}}
       </p>
@@ -66,6 +78,7 @@
     @include('components.tag')
     <!-- gallary widget-->
     @include('components.donate')
+     @include('components.map')
     </div>
   </div>
 @endsection

@@ -44,6 +44,8 @@
     @include('components.search-form')
     <!-- Tags widget-->
     @include('components.tag')
+    @include('components.contact')
+     @include('components.map')
     </div>
   </div>
 @endsection
